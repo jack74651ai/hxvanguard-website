@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HX Vanguard · Premium USP Chemical Ingredients</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--white:#fff;--off-white:#f8fafc;--light-gray:#f1f5f9;--border:#e2e8f0;--text:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;--navy:#0a1628;--navy-light:#1e293b;--teal:#0d9488;--teal-dark:#0f766e;--teal-light:#ccfbf1;--shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);--shadow-md:0 4px 6px -1px rgba(0,0,0,0.07);--shadow-lg:0 10px 15px -3px rgba(0,0,0,0.08);--radius:12px}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+    /* Nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all .3s}
+    nav.scrolled{background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);box-shadow:var(--shadow);padding:10px 0}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:22px;font-weight:800;letter-spacing:-.5px;color:var(--text)}
+    .nav-logo span{color:var(--teal)}
+    .nav-links{display:flex;gap:32px;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--teal)}
+    .nav-cta{background:var(--teal);color:#fff!important;padding:8px 20px;border-radius:6px;font-weight:600}
+    .nav-cta:hover{background:var(--teal-dark);color:#fff!important}
+
+    /* Hero */
+    .hero{min-height:100vh;background:linear-gradient(165deg,#0a1628 0%,#0f2937 35%,#134b44 70%,#0d9488 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(13,148,136,0.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(6,182,212,0.1) 0%,transparent 50%)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:120px 24px 80px;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);padding:6px 14px;border-radius:50px;font-size:12px;color:rgba(255,255,255,0.7);letter-spacing:.5px;margin-bottom:24px}
+    .hero-badge strong{color:var(--teal);font-weight:600}
+    .hero h1{font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;color:#fff;margin-bottom:20px}
+    .hero h1 em{color:#5eead4;font-style:normal}
+    .hero p{font-size:18px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:32px;max-width:520px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--teal-dark);padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-primary:hover{background:var(--teal-light);transform:translateY(-1px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.3);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.06)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .hero-stat{text-align:center}
+    .hero-stat .num{font-size:28px;font-weight:800;color:#fff;display:block;line-height:1.2}
+    .hero-stat .num span{color:#5eead4}
+    .hero-stat .label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;text-transform:uppercase;letter-spacing:.8px}
+    .hero-right{display:grid;gap:16px}
+    .hero-img-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;backdrop-filter:blur(8px)}
+    .hero-img-card img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .5s}
+    .hero-img-card:hover img{transform:scale(1.03)}
+    .hero-img-card .caption{padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+    .hero-img-card .caption span{color:rgba(255,255,255,0.6);font-size:13px}
+    .hero-img-card .caption strong{color:#fff;font-size:14px}
+
+    /* Sections */
+    .section{padding:100px 0}
+    .section-alt{background:var(--off-white)}
+    .section-header{text-align:center;max-width:640px;margin:0 auto 60px}
+    .section-header .pre{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--teal);font-weight:600;margin-bottom:12px}
+    .section-header h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;letter-spacing:-.5px;color:var(--text);margin-bottom:16px}
+    .section-header p{color:var(--text-secondary);font-size:17px;line-height:1.7}
+
+    /* Products - with image placeholders */
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .product-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;transition:all .3s}
+    .product-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:var(--teal)}
+    .product-card .img-wrap{height:280px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+    .product-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .product-card:hover .img-wrap img{transform:scale(1.05)}
+    .product-card .body{padding:24px}
+    .product-card .tag{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-weight:600;color:var(--teal);margin-bottom:8px}
+    .product-card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+    .product-card .desc{color:var(--text-secondary);font-size:14px;line-height:1.7;margin-bottom:12px}
+    .product-card .apps{font-size:12px;color:var(--text-muted);margin-bottom:12px;padding-top:12px;border-top:1px solid var(--border)}
+    .product-card .spec{font-size:12px;font-family:monospace;background:var(--light-gray);padding:8px 12px;border-radius:6px;color:var(--text-secondary)}
+
+    /* Placeholder image styles for each product */
+    .img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
+    .img-placeholder .icon{font-size:52px;margin-bottom:12px;opacity:.6}
+    .img-placeholder .label{font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);letter-spacing:.3px}
+    .img-placeholder .sublabel{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px}
+
+    .prod-menthol{background:linear-gradient(135deg,#e0f7fa,#b2ebf2,#80deea)}
+    .prod-camphor{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8)}
+    .prod-eucalyptus{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7)}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about-text h2{font-size:36px;font-weight:800;letter-spacing:-.5px;margin-bottom:20px}
+    .about-text h2 em{color:var(--teal);font-style:normal}
+    .about-text>p{color:var(--text-secondary);font-size:16px;line-height:1.8;margin-bottom:16px}
+    .about-list{list-style:none;margin-top:24px}
+    .about-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)}
+    .about-list li:last-child{border:none}
+    .about-list .icon{width:28px;height:28px;background:var(--teal-light);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+    .about-list .content strong{display:block;font-size:15px}
+    .about-list .content span{font-size:13px;color:var(--text-secondary)}
+    .about-image{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+    .about-image::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,148,136,0.15),rgba(6,182,212,0.08));pointer-events:none}
+    .about-image img{width:100%;height:480px;object-fit:cover;display:block}
+
+    /* Clients */
+    .client-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:40px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;margin-bottom:20px;transition:all .3s}
+    .client-card:hover{box-shadow:var(--shadow-md)}
+    .client-logo{width:100px;height:100px;background:var(--light-gray);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--text);flex-shrink:0;border:1px solid var(--border)}
+    .client-info .tag{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--teal);font-weight:600;margin-bottom:6px}
+    .client-info h3{font-size:20px;font-weight:700;margin-bottom:8px}
+    .client-info p{color:var(--text-secondary);font-size:14px;line-height:1.7}
+
+    /* Certs */
+    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .cert-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:28px;text-align:center;transition:all .3s}
+    .cert-card:hover{box-shadow:var(--shadow-md);border-color:var(--teal)}
+    .cert-card .icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px}
+    .cert-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
+    .cert-card .sub{font-size:12px;color:var(--text-muted);margin-bottom:10px}
+    .cert-card p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .contact-info h3{font-size:22px;font-weight:700;margin-bottom:16px}
+    .contact-info>p{color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:24px}
+    .contact-details{display:flex;flex-direction:column;gap:14px}
+    .contact-item{display:flex;gap:12px;align-items:flex-start}
+    .contact-item .icon{width:36px;height:36px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+    .contact-item strong{display:block;font-size:14px}
+    .contact-item span{font-size:13px;color:var(--text-secondary)}
+    form{display:flex;flex-direction:column;gap:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    input,textarea,select{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:14px;transition:all .2s;background:#fff}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-light)}
+    textarea{min-height:120px;resize:vertical}
+    .btn-submit{background:var(--teal);color:#fff;border:none;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;transition:all .2s;align-self:flex-start}
+    .btn-submit:hover{background:var(--teal-dark);transform:translateY(-1px)}
+
+    /* Footer */
+    footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 0 32px}
+    .footer-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    footer h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px}
+    footer p{font-size:13px;line-height:1.7;margin-bottom:12px}
+    footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:block;margin-bottom:8px}
+    footer a:hover{color:var(--teal)}
+    .footer-logo{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:8px}
+    .footer-logo span{color:var(--teal)}
+    .footer-bottom{max-width:1200px;margin:32px auto 0;padding:20px 24px 0;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;font-size:12px}
+
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .hero-grid{grid-template-columns:1fr;gap:40px}
+      .hero-stats{grid-template-columns:repeat(3,1fr);gap:12px}
+      .product-grid{grid-template-columns:1fr}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr 1fr}
+      .client-card{grid-template-columns:1fr;text-align:center}
+      .client-logo{margin:0 auto}
+      .form-row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+    }
+    @media(max-width:480px){.cert-grid,.footer-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">HX<span>Vanguard</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#clients">Clients</a>
+      <a href="#certifications">Quality</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">✦ Trusted by <strong>Fortune 50</strong> manufacturers worldwide</div>
+      <h1>Premium USP<br>Chemical Ingredients<br><em>for Life Sciences</em></h1>
+      <p>HX Vanguard is a leading supplier of high-purity USP-grade Menthol, Camphor, and Eucalyptus Oil — serving the pharmaceutical, flavor & fragrance, and personal care industries across North America and beyond.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Products →</a>
+        <a href="#contact" class="btn-outline">Request a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">15<span>+</span></span><span class="label">Years Supply</span></div>
+        <div class="hero-stat"><span class="num">3,200<span>+</span></span><span class="label">Tons Delivered</span></div>
+        <div class="hero-stat"><span class="num">99.9<span>%</span></span><span class="label">On-Time Rate</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-card">
+        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&q=80" alt="Laboratory" loading="lazy">
+        <div class="caption">
+          <strong>USP-Grade Manufacturing</strong>
+          <span>FDA Registered Facility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-header" style="text-align:left;margin:0 0 24px">
+          <div class="pre">About HX Vanguard</div>
+          <h2>Your Trusted Partner in<br><em>USP Chemical Supply</em></h2>
+        </div>
+        <p>Headquartered in Paramus, New Jersey, HX Vanguard is a premier supplier of high-purity USP-grade chemical ingredients. We bridge the gap between global manufacturing and the stringent quality requirements of America's largest pharmaceutical and consumer goods companies.</p>
+        <p>Our supply chain spans certified production facilities across Asia and Europe, with rigorous third-party testing and documentation to meet every FDA, USP, and cGMP requirement.</p>
+        <ul class="about-list">
+          <li><div class="icon">🏭</div><div class="content"><strong>USP-Grade Manufacturing</strong><span>All products meet United States Pharmacopeia standards with full COA documentation</span></div></li>
+          <li><div class="icon">🌎</div><div class="content"><strong>Global Supply Network</strong><span>Strategic sourcing from certified facilities ensuring competitive pricing and supply security</span></div></li>
+          <li><div class="icon">🔬</div><div class="content"><strong>Quality Assurance</strong><span>In-house QC lab with HPLC, GC, and melting point analysis for batch-to-batch consistency</span></div></li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="images/mint_field.png" alt="Mint Plantation" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="pre">Product Portfolio</div>
+      <h2>Premium USP-Grade Ingredients</h2>
+      <p>Every product is manufactured under strict GMP conditions and certified to meet USP pharmacopeia standards with full traceability.</p>
+    </div>
+    <div class="product-grid">
+
+      <!-- Menthol -->
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="images/menthol.png" alt="Menthol Crystals USP" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="tag">Cooling · Mint · Crystalline</div>
+          <h3>Menthol Crystals USP</h3>
+          <p class="desc">Highest-purity L-Menthol Crystals, meeting strict USP pharmacopeia standards. Our menthol delivers an intense cooling sensation with exceptional purity (≥99.9%).</p>
+          <p class="apps">Applications: Flavor & Fragrance · Pharmaceuticals · Oral Care · Confectionery · Tobacco</p>
+          <div class="spec">C₁₀H₂₀O · MW 156.27 · MP 41-44°C · Purity ≥99.9%</div>
+        </div>
+      </div>
+
+      <!-- Camphor -->
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="images/camphor.png" alt="Camphor USP" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="tag">Synthetic · Premium · Crystalline</div>
+          <h3>Camphor USP</h3>
+          <p class="desc">High-purity synthetic Camphor USP, manufactured under strict GMP conditions. Our camphor meets USP specifications for pharmaceutical and industrial applications.</p>
+          <p class="apps">Applications: Pharmaceuticals · Cosmetics · Plastics · Pest Control · Flavoring</p>
+          <div class="spec">C₁₀H₁₆O · MW 152.23 · MP 174-179°C · Purity ≥99.0%</div>
+        </div>
+      </div>
+
+      <!-- Eucalyptus Oil -->
+      <div class="product-card">
+        <div class="img-wrap">
+          <img src="images/eucalyptus.png" alt="Eucalyptus Oil" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="tag">Natural · 80% Cineole · Premium</div>
+          <h3>Eucalyptus Oil</h3>
+          <p class="desc">Premium Eucalyptus Globulus essential oil, steam-distilled from select Australian plantations. Standardized to minimum 80% 1,8-Cineole content.</p>
+          <p class="apps">Applications: Pharmaceuticals · Respiratory Care · Aromatherapy · Cleaning · Flavor</p>
+          <div class="spec">C₁₀H₁₈O · 1,8-Cineole ≥80% · Density 0.906-0.925</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Clients -->
+<section class="section" id="clients">
+  <div class="container">
+    <div class="section-header">
+      <div class="pre">Trusted Partners</div>
+      <h2>Proud to Supply Industry Leaders</h2>
+      <p>We are honored to be a certified supplier to two of the world's most respected manufacturers.</p>
+    </div>
+    <div class="client-card">
+      <div class="client-logo">R·A·I</div>
+      <div class="client-info">
+        <div class="tag">Strategic Raw Material Partner</div>
+        <h3>Reynolds American Inc.</h3>
+        <p>Preferred supplier of USP menthol for RAI's portfolio including Camel, Newport, and Pall Mall brands. Uninterrupted supply since 2018.</p>
+      </div>
+    </div>
+    <div class="client-card">
+      <div class="client-logo">P&amp;G</div>
+      <div class="client-info">
+        <div class="tag">Global Ingredient Supplier</div>
+        <h3>Procter &amp; Gamble</h3>
+        <p>Certified supplier of menthol and camphor for P&amp;G's oral care, respiratory, and personal care product lines across North America and EMEA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section class="section section-alt" id="certifications">
+  <div class="container">
+    <div class="section-header">
+      <div class="pre">Quality &amp; Compliance</div>
+      <h2>Certified to the Highest Standards</h2>
+      <p>Our commitment to quality is backed by internationally recognized certifications and rigorous testing protocols.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="icon" style="background:var(--teal-light)">📜</div><h4>USP</h4><div class="sub">United States Pharmacopeia</div><p>All products meet or exceed strict USP monograph standards.</p></div>
+      <div class="cert-card"><div class="icon" style="background:#fef3c7">⚙️</div><h4>ISO 9001:2024</h4><div class="sub">Quality Management</div><p>Certified quality management system for consistent product excellence.</p></div>
+      <div class="cert-card"><div class="icon" style="background:#dbeafe">🏛️</div><h4>FDA Registered</h4><div class="sub">Food &amp; Drug Administration</div><p>Facility and products registered with the U.S. FDA.</p></div>
+      <div class="cert-card"><div class="icon" style="background:#f3e8ff">🔬</div><h4>cGMP</h4><div class="sub">Current Good Manufacturing Practice</div><p>Manufacturing follows strict cGMP guidelines for pharmaceutical-grade products.</p></div>
+      <div class="cert-card"><div class="icon" style="background:#fff7ed">🥬</div><h4>Kosher Certified</h4><div class="sub">Orthodox Union</div><p>All products are Kosher certified for food and pharmaceutical applications.</p></div>
+      <div class="cert-card"><div class="icon" style="background:#f0fdf4">🌙</div><h4>Halal Certified</h4><div class="sub">Halal Quality</div><p>Products certified Halal for use in Muslim-majority markets.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="pre">Get In Touch</div>
+      <h2>Request a Quote</h2>
+      <p>Our team is ready to support your supply chain needs. Send us your requirements and we'll respond within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Our team is available Monday through Friday, 8:00 AM — 6:00 PM EST.</p>
+        <div class="contact-details">
+          <div class="contact-item"><div class="icon">📍</div><div><strong>Headquarters</strong><span>205 Robin Road, Suite 225<br>Paramus, NJ 07652, USA</span></div></div>
+          <div class="contact-item"><div class="icon">✉️</div><div><strong>Email</strong><span>supply@hxvanguard.com</span></div></div>
+          <div class="contact-item"><div class="icon">🌐</div><div><strong>Website</strong><span>www.hxvanguard.com</span></div></div>
+        </div>
+      </div>
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Company Name">
+          <select>
+            <option>Product of Interest</option>
+            <option>Menthol Crystals USP</option>
+            <option>Camphor USP</option>
+            <option>Eucalyptus Oil</option>
+            <option>Multiple Products</option>
+          </select>
+        </div>
+        <textarea placeholder="Tell us about your requirements..."></textarea>
+        <button type="submit" class="btn-submit">Send Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">HX<span>Vanguard</span></div>
+      <p>Premium USP-grade chemical ingredients for the world's leading manufacturers. Quality · Reliability · Trust.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#clients">Clients</a>
+      <a href="#certifications">Certifications</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:supply@hxvanguard.com">supply@hxvanguard.com</a>
+      <a href="#contact">Contact Form</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HX Vanguard LLC · All rights reserved.</span>
+    <span>ISO 9001:2024 · FDA Registered · Kosher · Halal</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navbar').addEventListener('scroll', function(){this.classList.toggle('scrolled',window.scrollY>60)});
+  window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60)});
+</script>
+
+</body>
+</html>
